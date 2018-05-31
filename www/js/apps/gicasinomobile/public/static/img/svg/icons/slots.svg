@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	<!ENTITY ns_extend "http://ns.adobe.com/Extensibility/1.0/">
+	<!ENTITY ns_ai "http://ns.adobe.com/AdobeIllustrator/10.0/">
+	<!ENTITY ns_graphs "http://ns.adobe.com/Graphs/1.0/">
+	<!ENTITY ns_vars "http://ns.adobe.com/Variables/1.0/">
+	<!ENTITY ns_imrep "http://ns.adobe.com/ImageReplacement/1.0/">
+	<!ENTITY ns_sfw "http://ns.adobe.com/SaveForWeb/1.0/">
+	<!ENTITY ns_custom "http://ns.adobe.com/GenericCustomNamespace/1.0/">
+	<!ENTITY ns_adobe_xpath "http://ns.adobe.com/XPath/1.0/">
+]>
+<svg version="1.1" id="Layer_1" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="48px" height="51px"
+	 viewBox="0 0 48 51" style="enable-background:new 0 0 48 51;" xml:space="preserve">
+	<g i:extraneous="self">
+		<path d="M34.85,24.8741c-0.7411,0-1.4608,0.0795-2.1666,0.1982c-0.8104-2.1446-1.1522-4.0805-1.1522-5.8264
+			C31.387,8.7418,44.3976,4.0557,45.2313,3.7424c0.2146,0.0081,0.4229,0.01,0.6397,0.0203l0.0971-1.9915
+			C41.5099,1.559,37.6746,1.8223,34.356,2.4296C14.0234-5.5183,1.3366,8.5785,1.3366,8.5785
+			c7.0509,2.5588,12.8664,2.8267,17.6772,1.9574c-4.4976,5.266-5.3107,11.4939-5.4154,14.5196
+			c-0.1659-0.0062-0.3285-0.0247-0.4959-0.0247c-3.9403,0-7.4329,1.755-9.835,4.4765C1.2586,31.7837,0,34.7254,0,37.9837
+			c0,7.1542,5.8665,12.9525,13.1029,12.9525c4.5128,0,8.4915-2.2574,10.8478-5.6914c1.4212-2.0714,2.2534-4.5698,2.2534-7.2613
+			c0-3.3107-1.2938-6.2986-3.3609-8.5885c-0.1662-0.1843-0.2999-0.3965-0.4765-0.5709c-1.8075-1.787-4.1428-3.0484-6.7528-3.5497
+			c0.0832-2.8274,0.8473-9.3354,5.794-14.3954c0.4572-0.4677,0.9478-0.9046,1.4539-1.327c3.3919-1.1348,6.1832-2.7863,8.4858-4.382
+			c2.6816-0.7857,5.6902-1.2544,9.0083-1.4134c-4.4395,2.4102-10.7442,7.2548-10.8406,15.4893
+			c-0.0012,1.9404,0.3752,4.0429,1.2016,6.3003c-2.1319,0.7135-4.0176,1.9598-5.5115,3.5718
+			c1.87,2.4874,3.0156,5.5355,3.0156,8.8655c0,3.3087-1.1287,6.3405-2.9766,8.8193C27.6456,49.3694,31.0451,51,34.85,51
+			C42.1131,51,48,45.1504,48,37.9371C48,30.7222,42.1131,24.8741,34.85,24.8741z"/>
+	</g>
+</svg>

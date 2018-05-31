@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	<!ENTITY ns_extend "http://ns.adobe.com/Extensibility/1.0/">
+	<!ENTITY ns_ai "http://ns.adobe.com/AdobeIllustrator/10.0/">
+	<!ENTITY ns_graphs "http://ns.adobe.com/Graphs/1.0/">
+	<!ENTITY ns_vars "http://ns.adobe.com/Variables/1.0/">
+	<!ENTITY ns_imrep "http://ns.adobe.com/ImageReplacement/1.0/">
+	<!ENTITY ns_sfw "http://ns.adobe.com/SaveForWeb/1.0/">
+	<!ENTITY ns_custom "http://ns.adobe.com/GenericCustomNamespace/1.0/">
+	<!ENTITY ns_adobe_xpath "http://ns.adobe.com/XPath/1.0/">
+]>
+<svg version="1.1" id="Layer_1" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="39.0004px"
+	 height="40.0019px" viewBox="0 0 39.0004 40.0019" enable-background="new 0 0 39.0004 40.0019" xml:space="preserve">
+	<g i:extraneous="self">
+		<path d="M13.9995,19.0018V15.002h3.9998v3.9998H13.9995L13.9995,19.0018z M21.0007,19.0018V15.002h3.9998v3.9998
+			H21.0007L21.0007,19.0018z M28.0003,19.0018V15.002h3.9998v3.9998H28.0003L28.0003,19.0018z M6.9999,26.0014v-3.9998h3.9997
+			v3.9998H6.9999L6.9999,26.0014z M13.9995,26.0014v-3.9998h3.9998v3.9998H13.9995L13.9995,26.0014z M21.0007,26.0014v-3.9998
+			h3.9998v3.9998H21.0007L21.0007,26.0014z M28.0003,26.0014v-3.9998h3.9998v3.9998H28.0003L28.0003,26.0014z M6.9999,33.0027
+			v-3.9998h3.9997v3.9998H6.9999L6.9999,33.0027z M13.9995,33.0027v-3.9998h3.9998v3.9998H13.9995L13.9995,33.0027z
+			 M21.0007,33.0027v-3.9998h3.9998v3.9998H21.0007L21.0007,33.0027z"/>
+		<path d="M32.0003,0H7.0003C3.133,0,0.0002,3.1343,0.0002,7.0016v2.9973
+			v0.0024h1.9993h35.0013h1.9991h0.0004V7.0016C39.0004,3.1343,35.8661,0,32.0003,0z M8.9998,7.0009
+			c-1.1051,0-1.9997-0.8949-1.9997-2s0.8947-2,1.9997-2s2,0.8949,2,2S10.1048,7.0009,8.9998,7.0009z M30.0002,7.0009
+			c-1.1048,0-1.9997-0.8949-1.9997-2s0.8949-2,1.9997-2c1.1051,0,2,0.8949,2,2S31.1052,7.0009,30.0002,7.0009z"/>
+		<path d="M37.0009,33.0018c0,2.757-2.2437,5.0007-5.0007,5.0007H7.0001c-2.757,0-5.0005-2.2437-5.0005-5.0007
+			V10.0013H0.0002V9.9989C0.0002,9.9995,0,10.0004,0,10.0011v23.0008c0,3.8673,3.1328,7.0001,7.0001,7.0001h25.0001
+			c3.8671,0,6.9998-3.1328,6.9998-7.0001V10.0013h-1.9991V33.0018z"/>
+		<path fill="none" d="M7.0001,38.0026h25.0001c2.757,0,5.0007-2.2437,5.0007-5.0007V10.0013H1.9995v23.0005
+			C1.9995,35.7589,4.243,38.0026,7.0001,38.0026z"/>
+	</g>
+</svg>

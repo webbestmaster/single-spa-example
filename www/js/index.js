@@ -5,9 +5,15 @@ import {type ModuleType} from './../flow-types/single-spa';
 import {pathPrefix} from './helper';
 
 registerApplication(
-    'app-1',
-    (): Promise<ModuleType> => import('./app-1/app-loader.js'),
-    pathPrefix('/app-1')
+    'euroweb-mobile',
+    (): Promise<ModuleType> => import('./apps/euroweb-mobile/app-loader.js'),
+    pathPrefix('/euroweb-mobile')
+);
+
+registerApplication(
+    'gicasinomobile',
+    (): Promise<ModuleType> => import('./apps/gicasinomobile/app-loader.js'),
+    pathPrefix('/gicasinomobile')
 );
 
 singleSpaStart();

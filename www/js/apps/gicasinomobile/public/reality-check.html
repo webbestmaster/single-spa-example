@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html id="page">
+  <head>
+    <meta charset="utf-8">
+    <meta charset="utf-8">
+    <title>Reality Check</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+          background: rgba(0, 0, 0, .75);
+          color: #eee;
+          opacity: 1;
+          font-size: 16px;
+          font-family: "Trebuchet MS", Helvetica, sans-serif;
+          margin: 0;
+          height: 100%;
+          width: 100%;
+      }
+
+      @media (min-height: 640px) {
+        body {
+          font-size: 20px;
+        }
+      }
+
+      .popup__table {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: table;
+      }
+
+      .popup__center {
+        display: table-cell;
+        text-align: center;
+        vertical-align: middle;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+
+      .popup {
+        width: 100%;
+        min-width: 280px;
+        max-width: 480px;
+        background: #d34552;
+        display: inline-block;
+        border-radius: 20px;
+        padding: 2px;
+      }
+      .popup__title {
+        font-size: 1.6em;
+        padding-top: 5px;
+        margin-bottom: 10px;
+      }
+      .popup__content {
+        position: relative;
+        padding-left: 4em;
+        min-height: 2.5em;
+        margin-bottom: 10px;
+      }
+      .popup__icon {
+        width: 2.5em;
+        height: 2.5em;
+        position: absolute;
+        left: 0.7em;
+        top: 50%;
+        margin-top: -1.25em;
+      }
+
+      .popup__icon-img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .popup__text {
+        font-size: .8em;
+        line-height: 1.2;
+        text-align: left;
+      }
+      .popup__buttons {
+        display: table;
+        width: 100%;
+        table-layout: fixed;
+        border-collapse: separate;
+      }
+      .popup__buttons-row {
+        display: table-row;
+      }
+      .popup__buttons-col {
+        display: table-cell;
+        border: 2px solid #d34552;
+        vertical-align: middle;
+        cursor: pointer;
+      }
+
+      .popup__buttons-col_dark {
+        background: #923039;
+        font-size: 0.9em;
+        line-height: 1;
+        padding: 10px 6px;
+      }
+
+      .popup__buttons-col_light {
+        background: #b03a45;
+        font-size: 0.8em;
+        line-height: 1;
+        padding: 6px;
+      }
+
+      .popup__buttons-col_round-left {
+        border-bottom-left-radius: 20px;
+      }
+
+      .popup__buttons-col_round-right {
+        border-bottom-right-radius: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="popup__table">
+      <div class="popup__center">
+        <div class="popup">
+          <div class="popup__title" data-translate="integrator.casino.sessionPopup.title">
+          </div> <!-- end popup__title -->
+          <div class="popup__content">
+            <div class="popup__icon">
+              <img class="popup__icon-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAH8AAACACAYAAAAiebbfAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABmJLR0QAAAAAAAD5Q7t/AAAACXBIWXMAAAsSAAALEgHS3X78AAAMuUlEQVR42u2de7RUVR3HP78LSGi2IHyliBfEUPGBIJZLAx+Y78JEkNJlkUorl2VqVmqZprV8AbZMM0Wt0FxSuUoyLU1citpSVMpnKOJdIqWoYF55yPXbH3uG5o4zc8/MnHN+5wx81prFneHM3r/f/s45Z5+9f/u3jQ0QSb2AXkAfQMD7QJeZfeBtW5qYtwFxI6k3MKzw2hYYCmwH9C+8BgAfATYB+gIfAGsIP4BO4C1gZeHfDuAV4FXgX2bW4e1fnORefEk7AGOA0cBIYBdgEOHMjpPVwMvAM8CTwAJggZkt926DRsmd+JL6AAcCY4HxwB5APydzVgIPA/cD88zsMe/2qYfciC/ps8CRwOeAdm97qrAAuBOYa2YLvI3piUyLL2lH4HhgMrC7tz118jdgNvB7M1vpbUwlMim+pE8B04AphM5ZnvkPcCNwg5kt9jamlEyJL2l/4CxggrctCbAKuBmYYWaLvI2BjIgvaS/ge8Bx3rakwBrg58DlZrbU0xBX8SVtC5wLnOZphxMrgUuAK8xMHga4iS/pFOBSwqDLhszjwJlm9mDaFacufqEHPwM4Ou26M85M4Hwz60yrwlTFlzQV+CmwWZr15oingVPN7JE0KmtLoxJJm0qaBcxio/C12A14WNI5aVSW+JkvaWfgVmCvNBxqIW4lXAUSuw0kKr6kCcCvgM2TrKeFeQqYaGYvJVF4Ypd9SdOAO9gofDOMBB6VNDaJwhMRX9KFhIGMjTTPFsC9ko6Ju+DYL/uSZgBnpNAojbAOWAi8SAjUeJcQ1LEVMBzYkRD4kVWmmNlt3kZURNK1yiZPSDpd0oge7O8v6ShJsyWt9Ta6Cid661yp4WZ4t0oFOhptLEm7SLrJ24EqTPLWu7ShLvJujQrMlvTxGHybLGm1tzMVONJbdyRN826FCvwoZh93l7TU26ky3pc00lP4o7xboAKXJeTrMElveTtXxusKM6MN0XBvX9JQ4FlC+HNW+IuZHZpU4ZIOBu71drKMx4F9GpkWbug5X1Jf4I9kS/h3gROSrMDM7iNMTGWJvYGbGvlio4M8NwMjGvxuUlxiZm+kUM85wNvezpZxkqST6/1S3eIrPDod7+1tGSuAq9KoyMzWpFVXnVynECsRmbrEl7QdcIO3lxX4jZmtSrG+XxKWd2WJNuD2er9QD7cQhkOzxtw0KzOzJYQFGlljlKTvRz04sviSTgLGeXtXgU7gnw71PurteBUukvTJKAdGEl/SAOAab6+qsATwCIF+wdvxGsyKclDUM/8yYFNvj6qw0mldfRpPFo2yv6RjezqoR/El7QbU/RiRIl0bWL1RmSmpZv8sypl/hbcXPeB1RfqYt+M9MAg4vdYBNcWX9GkgseHSmNhKkocQg7wdj8B5kqqeHD2d+T/2tj4C2wLbO9S7k7fjERhAjaiqquIrLJ480Nv6CPQCBjvUmwfxAc6odu+vdeZ/29vqOkhViMKl1ONq0whbUmXCq6L4CkmOJntbXQfDU66vnWwHepZzZqUPq535J5HSUq6YiDSiFSODiT/bV5KMkPSh0dkPCayQoPDL3tbWyeCC3WkxzNvhBpha/kGls3s8MMTb0jrZnnQ7fWnfZuJgosoCWiuJ3+OwYAbpB+yQYn1p32biYFPg8NIPuokvqR8hz10eSeVqJamNdH9ocTKx9E35mT8O2NrbwgZJ61I8iHyM7lXiEEkDi2/KxT/E27omSOtS3E5+E0xsBnym+KZc/IO8rWuCoSnVk7fOcDnji3+sF1/SToT14HllkKQtU6gnj529Utav9S8980d7W9UkA0knIXMeH/NKGSFpCHQXf19vq2KgPYU66gqPziBtFE70UvH39LYqBhIdeSsMkuS1p1/KGCiIX5il2tXbohjYOeHyhxDSpOSd4fD/M384Yeov7yQ9tZvXwZ1yhkuyovhpPSYlzeDCKGVS5HFCp5of2xfFb/e2JiY+QbI/5Lz39Iv0Bga3mvhtJDu71yriA2xdFL8VerBFEnkUK8TBecQKJkV7UfxWypKZ1Nk5hHBbaRW2LIrfdNaqDJGU+O2Ee2WrMLCt0Dse2HRR2WFIYc49bvI+slfOgDZCXp28b19WynYkE1adlzj9qPRtI1zKWuly1o9knl6SHj1Mm15thBDkVhIfkplzb7XLfu/ivTET++vFSKydvkIuojwt0oiCtRHWmWctuVCzxN3jH0p2k1M0yrqi+FlPNFAvcXfO8h66VYl1bcBaYLW3JTEzSDFk3C6h1Xr6AGvbgPeAN70tiZn+xDsD10pj+kVWtBUS9mYtnWgctMdYVt6DNiuxvNjbf8fbkgSI5cwvpHxppQmdIm8WxX/N25IEiOtsHUZrbvb8SlH8Jd6WJEBcI3Lt3o4kxLKi+K94W5IAO0iKY86iVUK3SukClhbFX+xtTQJsRTwhXa3Y2VsMdBTFXwS85W1RzMS1lLoVxX/BzN5vAzCzFcBz3hYlQFOX7EKql1Yc4FkE3VfseKQtT5qDm/z+aGAbbycS4DHoLv4j3hYlwOHNbD0GTPN2ICGegO7iZ3HniGbZBJjZyBcLGUinNvLdjPMcFS77zxH2yWs1jpP0rXq+UFjn/1tvwxNifnF/gvXiFz6Y521ZQkyXdGGUAyWNAebTOkvYyrmv+Ed5lOtfvS1LkB9IelLSFyV1i7+XZJJGSpoOPExr9vABVgEPFN90C9+S1B94idaK46/EcmAh8F/CCdAO7OFtVArcbWbrc/F1C9w0sxWS7iLhbUkzwBY0/xiYR+4ofVNpccPvvC3cSCKsIex/vJ5K4t9Da07xbujMNbN/l37wIfEL25LO9rZ0I7FzY/kHFeP1Je1Ma471l/Ju4dWL0MHNU/78elkM7FS+/2DFlTpm9rykPwFHelsdMy8DvyY8zj1D2H27N2GTppHA0cAk8rXRRBSurrTxZNWVOpIOAO73tjomPiDsGXS1ma2tdaCkXYELCD+CVuAdYLCZrSz/j6q/cDObB/zd2/IYeAnY08ym9yR8we9nzWwycJa34TFxTSXhoYc1epIOBe72tr4JlgGjynu5UZF0GnC1txNN0AkMNbPXK/1nzXubmd1DGOfOKxMaFb7g/88IfYS8MqOa8BBhda6k/YCHvL1ogOvN7NRmCylkJ11G9vfOLedtoN3Mqq7J6LFXa2bzgTnentRJF3BJHAWZ2XvANd4ONcB3awkPEdflSxpMCADYJMrxGWCemcW2FaykUeQr2OUpM9urp4MiPc+aWQdwvrdHdfBA80V0YyGw1NupOvhalIMiD2aY2eUUYr9yQKzrEMysi/wsbLnKzCI9otc7kjUVkLd3EViVQJmd3k5F4EXgO1EPrkt8M1sInO3tYQSSyCiah97+CWa2JurBdY9hm9l0wrRvlok1DKuw5q/d26keODfq5b5IoxMYJwCventbg7ijdEaT7c0m7zSzn9T7pYbEN7PlwHGECZMsMkbSLjGW9yVvh2rwIg2G3TU8dWlmjwKneHteg4viKETSNsBXvJ2pQidhCLuhzCpNzVub2Y3AD71boAoTJR0VQzk3kd3cxMea2TOuFki6TtmkU1LDW8ZJutjbgRpkZymZpFu8W6MKKyWNb8CfGd6G1+Cb3npXarA53q1Sgysl9ZiKXdJBkuZ7G1uDyIM4PRF7wmVJtwJT4i43JlYAdwFzgQ5C8sk+hO1T9gA+D+zvbWQNzjazK+MqLJFs25KuB05OrUkaZw1B/DwEbH7dzK6Ns8BEnDazU4CLU2mS5uibVBvEyGpgYtzCQ8J59iWdSgiEaOWY+CTpIIzXP5hE4Yn+6s3sF8Bh5Gc6NEvcB4xLSnhI4ZJnZvcCY4E/J11XC3EVcJiZLUmyklTud2bWYWZHAOeRj3gAL14DJpnZGWa2LunKUt9bR9I44HJgTNp1Z5w5hEe5jrQqTL2na2YPEG4DF9B6e/s0whLgRDOblKbw4LyrlkK6s/OBL3ja4UQX4d5+aa2FFUmSiS3VJE0ghIft521LSswhiO4aDp4J8QEU9r+dAnwD2MfbnoT4AzCzsAjWncyIX0RSb+AY4KvAod72xMAq4HZgVpLP7I2QOfFLkTQWOJ4w4dJMDl0PniYkt7rNzJ73NqYSmRa/iELSxCMImTPGEbZOyyJLCCNzdwL3mlmmY/1zIX4pkoYCBxB+BPvimy2zC3iKkOblfuAhM3vDuYkikzvxS5E0ANgdGAXsDexKiK9PajesZYS8Pv8AHgeeBJ6OkvEji+Ra/HIk9QUGEZImDyv8PYiwA3Z/wkqezQmrjXsR5vJFGGzqIkyfvkPI0vUmYW3CUsLE1CJgiZnlacFmTVpK/FoUniI+ShC/D93FX1d4rSHk4+2slL2q1fgforGmgLCY31QAAAAASUVORK5CYII="/>
+            </div> <!-- end popup__icon -->
+            <div class="popup__text" data-translate="integrator.casino.sessionPopup.message">
+            </div> <!-- end popup__text -->
+          </div> <!-- end popup__content -->
+          <div class="popup__buttons">
+            <div class="popup__buttons-row">
+              <div class="popup__buttons-col popup__buttons-col_dark" id="stop">
+                <span data-translate="integrator.casino.sessionPopup.button.stop"></span>
+              </div> <!-- end popup__buttons-col -->
+              <div class="popup__buttons-col popup__buttons-col_dark" id="continue">
+                <span data-translate="integrator.casino.sessionPopup.button.continue"></span>
+              </div> <!-- end popup__buttons-col -->
+            </div> <!-- end popup__button-row -->
+            <div class="popup__buttons-row">
+              <div class="popup__buttons-col popup__buttons-col_light popup__buttons-col_round-left" id="change">
+                <span data-translate="integrator.casino.realityPopup.button.changeTimeout"></span>
+              </div> <!-- end popup__buttons-col -->
+              <div class="popup__buttons-col popup__buttons-col_light popup__buttons-col_round-right" id="history">
+                <span data-translate="integrator.casino.realityPopup.button.history"></span>
+              </div> <!-- end popup__buttons-col -->
+            </div> <!-- end popup__button-row -->
+          </div> <!-- end popup__buttons -->
+        </div> <!-- end popup -->
+      </div> <!-- end popup__center -->
+    </div> <!-- end popup__table -->
+    <script>
+
+      window.GLOBAL_CONFIG = {
+        params: {}
+      };
+      var params = window.location.search
+        .replace('?', '')
+        .split('&');
+      for (var i = 0, len = params.length; i < len; i++) {
+        var param = params[i].split("=");
+        window.GLOBAL_CONFIG.params[param[0]] = param[1];
+      }
+
+      console.log(window.GLOBAL_CONFIG.params);
+
+      switch (window.GLOBAL_CONFIG.params.provider) {
+        case 'microgaming':
+          mgInterfaceApi();
+          mgRealityCheck();
+          break;
+        case 'relax':
+          relaxInterfaceApi();
+          relaxRealityCheck();
+          break;
+        default:
+          break;
+      }
+
+      // Common API
+      function ajax(url, params, cb, errorCb) {
+        var request = new XMLHttpRequest();
+        var hash = (localStorage.getItem("loginSessionHash"))
+          ? JSON.parse(localStorage.getItem("loginSessionHash")).data
+          : getCookie("PUNTER_KEY");
+
+        if ("withCredentials" in request) {
+          request.open('GET', window.GLOBAL_CONFIG.params.gateUrl + url + params, true);
+          request.withCredentials = true;
+        } else if (typeof XDomainRequest != "undefined") {
+          request = new XDomainRequest();
+          request.open('GET', window.GLOBAL_CONFIG.params.gateUrl + url + params);
+        }
+        request.setRequestHeader("punter-session-hash", hash);
+        request.onload = function() {
+          if (request.status >= 200 && request.status < 400) {
+            cb(JSON.parse(request.response));
+          } else {
+            errorCb(request);
+          }
+        };
+        request.send();
+      }
+
+      function translate() {
+        var items = document.querySelectorAll('[data-translate]');
+        Array.prototype.forEach.call(items, function(item, i){
+          var key = item.getAttribute('data-translate');
+          item.innerHTML = window.GLOBAL_CONFIG.i18n[key];
+        });
+      }
+
+      function createDelegate(func, target) {
+        return function () {
+          return func.apply(target, arguments);
+        };
+      }
+
+      function getCookie(name) {
+        var matches = document.cookie.match(new RegExp(
+          "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+        ));
+        return matches ? decodeURIComponent(matches[1]) : undefined;
+      }
+
+      // Relax API
+      function relaxInterfaceApi() {
+        window.addEventListener('message', function(event) {
+          var fn = window[event.data.method], parameters;
+
+          if (event.data['params']) {
+            parameters = event.data.params;
+          }
+
+          if (typeof fn === 'function') {
+            fn.apply(null, [parameters]);
+          }
+        }, false);
+
+        window.notifyMessage = function(method, params) {
+          window.parent.postMessage({method: method, params:params},'*');
+        };
+      }
+
+      function relaxRealityCheck() {
+        window.notifyMessage("operatorLoaded");
+        window.gameLoadedHandler = function() {
+          setup();
+        };
+
+        function setup() {
+          var buttons = [{ name: 'stop', id: 'stop' }, { name: 'continue', id: 'continue' }, { name: 'change', id: 'change' }, { name: 'history', id: 'history' }];
+          for (var k = 0; k < buttons.length; k++) {
+            var button = document.getElementById(buttons[k].id);
+            var clickEvent = function(event) {
+              buttonClick(this.name);
+            };
+            var clickEventDelegate = createDelegate(clickEvent, buttons[k]);
+            button.addEventListener('click',clickEventDelegate);
+          }
+
+          ajax('reality-check/settings', '', function(settingsResponse) {
+            window.GLOBAL_CONFIG.realityCheckPollPeriod = settingsResponse.realityCheckPollPeriod * 1000;
+            ajax('reality-check/translations', '?languagecode=' + window.GLOBAL_CONFIG.params.languagecode, function(translationsResponse) {
+              window.GLOBAL_CONFIG.i18n = translationsResponse;
+              translate();
+              realityCheck(showPopup, startPooling);
+            });
+          });
+        }
+
+        function realityCheck(yesCb, nocb) {
+          ajax('reality-check/' + window.GLOBAL_CONFIG.params.languagecode + '/check', '', function(realityCheckResponse) {
+              window.GLOBAL_CONFIG.duration = realityCheckResponse.duration;
+              if (realityCheckResponse.remind) {
+                if (yesCb) {
+                  yesCb();
+                }
+              } else {
+                if (nocb) {
+                  nocb();
+                }
+              }
+          }, function (error) {
+            if (error.status === 401) {
+              window.notifyMessage('navigateTo');
+            }
+          });
+        }
+
+        function showPopup() {
+          var playTime = document.getElementById("session-popup_play-time"),
+              page = document.getElementById("page");
+          playTime.innerHTML = window.GLOBAL_CONFIG.duration;
+          window.notifyMessage('pauseGame', {callback:'', return_data:''});
+        }
+
+        function hidePopup() {
+          var page = document.getElementById("page");
+          window.notifyMessage('resumeGame');
+        }
+
+        function startPooling() {
+          window.GLOBAL_CONFIG.poolingInterval = setInterval(function() {
+
+            realityCheck(function() {
+              stopPooling();
+              showPopup();
+            });
+
+          }, window.GLOBAL_CONFIG.realityCheckPollPeriod);
+        }
+
+        function stopPooling() {
+          clearInterval(window.GLOBAL_CONFIG.poolingInterval)
+        }
+
+        function buttonClick(button) {
+          ajax('reality-check/clear', '', function(clearResponse) {
+            switch(button) {
+              case 'stop':
+                window.notifyMessage('navigateTo', {url: window.GLOBAL_CONFIG.params.protocol + "//" + window.GLOBAL_CONFIG.params.baseUrl + "#/" + window.GLOBAL_CONFIG.params.languagecode + "/games/lobby"});
+                break;
+              case 'continue':
+                hidePopup();
+                startPooling();
+                break;
+              case 'change':
+                if (window.parent) {
+                  window.notifyMessage('navigateTo', {url: window.GLOBAL_CONFIG.params.protocol + "//" + window.GLOBAL_CONFIG.params.baseUrl + "#/" + window.GLOBAL_CONFIG.params.languagecode + "/account/reality-check"});
+                }
+                break;
+              case 'history':
+                if (window.parent) {
+                  window.notifyMessage('navigateTo', {url: window.GLOBAL_CONFIG.params.protocol + "//" + window.GLOBAL_CONFIG.params.baseUrl + "#/" + window.GLOBAL_CONFIG.params.languagecode + "/account/game-round-history"});
+                }
+                break;
+            }
+          });
+        }
+      }
+
+
+      // Microgaming API
+      function mgInterfaceApi() {
+        var isSetup = false, host, initCallback, initCallbackObj;
+        function InterfaceApi() {};
+        var _p = InterfaceApi.prototype;
+        function setup() {
+          isSetup = true;
+          host = decodeURIComponent(getQueryStringValue('p'));
+          var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
+          var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
+          var messageReceivedListener = function (e) {
+            messageReceived(e);
+          };
+          var messageReceivedListenerDelegate = createDelegate(messageReceivedListener, this);
+          window.addEventListener(messageEvent, messageReceivedListenerDelegate);
+        }
+        _p.init = function (callback, callbackObj) {
+          if (!isSetup) {
+            setup();
+          }
+          initCallback = callback;
+          initCallbackObj = callbackObj;
+          sendMessage('init');
+        };
+        function sendMessage(call, p1) {
+          if (call) {
+            var params = [];
+            if ((arguments.length > 1) && (typeof arguments[1].length !== 'undefined')) {
+              for (var i = 0; i < arguments[1].length; i++) {
+                if (typeof arguments[1][i] !== "function") {
+                  params.push(arguments[1][i]);
+                }
+              }
+            }
+            parent.postMessage(JSON.stringify({ call: call, params: params }), host);
+          }
+        }
+        function messageReceived(e) {
+          if (e.origin.toLowerCase() === host.toLowerCase()) {
+            if (e.data) {
+              var data = JSON.parse(e.data);
+              if (data.callback && data.callback === 'init') {
+                for (var i = 0; i < data.api.length; i++) {
+                  addApiCall(data.api[i].type, data.api[i].name, data.api[i].data);
+                }
+                if (initCallback) {
+                  if (initCallbackObj) {
+                    initCallback(initCallbackObj);
+                  }
+                  else {
+                    initCallback();
+                  }
+                }
+              }
+            }
+          }
+        }
+        function createDelegate(func, target) {
+          return function () {
+            return func.apply(target, arguments);
+          };
+        }
+        function addApiCall(type, name, data) {
+          switch (type) {
+            case 'function':
+              var apiFunction = function () {
+                sendMessage(name, Array.prototype.slice.call(arguments));
+              };
+              var apiFunctionDelegate = createDelegate(apiFunction, this);
+              window.mgs.inGameInterface[name] = apiFunctionDelegate;
+              break;
+            default:
+              window.mgs.inGameInterface[name] = data;
+              break;
+          }
+        }
+        function getQueryStringValue(key) {
+          var url = window.location.href;
+          var keysValues = url.split(/[\?&]+/);
+          for (var i = 0; i < keysValues.length; i++) {
+            var keyValue = keysValues[i].split("=");
+            if (keyValue[0] == key) {
+              return keyValue[1];
+            }
+          }
+          return false;
+        }
+        window.mgs = {};
+        window.mgs.inGameInterface = new InterfaceApi();
+      }
+
+      function mgRealityCheck() {
+        document.addEventListener("DOMContentLoaded", function () {
+          setup();
+        });
+
+        function setup() {
+          var buttons = [{ name: 'stop', id: 'stop' }, { name: 'continue', id: 'continue' }, { name: 'change', id: 'change' }, { name: 'history', id: 'history' }];
+          for (var k = 0; k < buttons.length; k++) {
+            var button = document.getElementById(buttons[k].id);
+            var clickEvent = function(event) {
+              buttonClick(this.name);
+            };
+            var clickEventDelegate = createDelegate(clickEvent, buttons[k]);
+            button.addEventListener('click',clickEventDelegate);
+          }
+
+          window.mgs.inGameInterface.init(interfaceApiLoaded);
+        }
+
+        function interfaceApiLoaded() {
+          ajax('reality-check/settings', '', function(settingsResponse) {
+            window.GLOBAL_CONFIG.realityCheckPollPeriod = settingsResponse.realityCheckPollPeriod * 1000;
+            ajax('reality-check/translations', '?languagecode=' + window.GLOBAL_CONFIG.params.languagecode, function(translationsResponse) {
+              window.GLOBAL_CONFIG.i18n = translationsResponse;
+              translate();
+              realityCheck(showPopup, startPooling);
+            });
+          });
+        }
+
+        function realityCheck(yesCb, nocb) {
+          ajax('reality-check/' + window.GLOBAL_CONFIG.params.languagecode + '/check', '', function(realityCheckResponse) {
+              window.GLOBAL_CONFIG.duration = realityCheckResponse.duration;
+              if (realityCheckResponse.remind) {
+                if (yesCb) {
+                  yesCb();
+                }
+              } else {
+                if (nocb) {
+                  nocb();
+                }
+              }
+          }, function (error) {
+            if (error.status === 401) {
+              window.mgs.inGameInterface.toLobby();
+            }
+          });
+        }
+
+        function showPopup() {
+          var playTime = document.getElementById("session-popup_play-time"),
+            page = document.getElementById("page");
+          playTime.innerHTML = window.GLOBAL_CONFIG.duration;
+          window.mgs.inGameInterface.preventGameplay();
+          window.mgs.inGameInterface.setMode(window.mgs.inGameInterface.modes.fullscreen);
+        }
+
+        function hidePopup() {
+          var page = document.getElementById("page");
+          window.mgs.inGameInterface.allowGameplay();
+          window.mgs.inGameInterface.setMode(window.mgs.inGameInterface.modes.hidden);
+        }
+
+        function startPooling() {
+          window.GLOBAL_CONFIG.poolingInterval = setInterval(function() {
+
+            realityCheck(function() {
+              stopPooling();
+              showPopup();
+            });
+
+          }, window.GLOBAL_CONFIG.realityCheckPollPeriod);
+        }
+
+        function stopPooling() {
+          clearInterval(window.GLOBAL_CONFIG.poolingInterval)
+        }
+
+        function buttonClick(button) {
+          ajax('reality-check/clear', '', function(clearResponse) {
+            switch(button) {
+              case 'stop':
+                window.mgs.inGameInterface.toLobby();
+                break;
+              case 'continue':
+                hidePopup();
+                startPooling();
+                break;
+              case 'change':
+                if (window.parent) {
+                  window.parent.location.href = window.GLOBAL_CONFIG.params.protocol + "//" + window.GLOBAL_CONFIG.params.baseUrl + "#/" + window.GLOBAL_CONFIG.params.languagecode + "/account/reality-check"
+                }
+                break;
+              case 'history':
+                if (window.parent) {
+                  window.parent.location.href = window.GLOBAL_CONFIG.params.protocol + "//" + window.GLOBAL_CONFIG.params.baseUrl + "#/" + window.GLOBAL_CONFIG.params.languagecode + "/account/game-round-history"
+                }
+                break;
+            }
+          });
+        }
+      }
+
+    </script>
+  </body>
+</html>

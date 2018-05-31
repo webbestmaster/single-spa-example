@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	<!ENTITY ns_extend "http://ns.adobe.com/Extensibility/1.0/">
+	<!ENTITY ns_ai "http://ns.adobe.com/AdobeIllustrator/10.0/">
+	<!ENTITY ns_graphs "http://ns.adobe.com/Graphs/1.0/">
+	<!ENTITY ns_vars "http://ns.adobe.com/Variables/1.0/">
+	<!ENTITY ns_imrep "http://ns.adobe.com/ImageReplacement/1.0/">
+	<!ENTITY ns_sfw "http://ns.adobe.com/SaveForWeb/1.0/">
+	<!ENTITY ns_custom "http://ns.adobe.com/GenericCustomNamespace/1.0/">
+	<!ENTITY ns_adobe_xpath "http://ns.adobe.com/XPath/1.0/">
+]>
+<svg version="1.1" id="Layer_1" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40.0023px"
+	 height="25.9999px" viewBox="0 0 40.0023 25.9999" style="enable-background:new 0 0 40.0023 25.9999;" xml:space="preserve">
+	<g i:extraneous="self">
+		<g>
+			<path d="M22.18,12.8975c0.642-0.5693,1.465-0.8833,2.3173-0.8833c1.0179,0,1.9817,0.4455,2.6469,1.2205
+				l0.8555,0.9916V8.4979c0-1.9291,1.5701-3.4977,3.4993-3.4977c0.5391,0,1.044,0.1324,1.5005,0.3507V4.9998
+				C32.9995,2.2385,30.7626,0,28.0012,0H6.9996C4.2382,0,1.9998,2.2385,1.9998,4.9998v2.9911C0.8159,8.6578,0,9.9553,0,11.4632
+				v4.0782c0,1.5068,0.8159,2.8048,1.9998,3.472v1.9867c0,2.7614,2.2385,4.9998,4.9998,4.9998h21.0016h0.8812l-7.0289-8.1522
+				C20.599,16.3936,20.7459,14.1721,22.18,12.8975z M1.8805,11.4632c0-1.0927,0.845-1.978,1.882-1.978h8.4723
+				c1.04,0,1.882,0.8853,1.882,1.978v4.0782c0,1.0911-0.842,1.9764-1.882,1.9764H3.7625c-1.037,0-1.882-0.8853-1.882-1.9764V11.4632
+				z"/>
+			<ellipse cx="8.4986" cy="13.5023" rx="2.5014" ry="2.4937"/>
+			<path d="M39.4905,14.3918c-0.6249-0.5554-1.5732-0.4904-2.1178,0.1439l-4.3732,5.0806V8.4979
+				c0-0.8276-0.6699-1.4975-1.499-1.4975s-1.5006,0.6699-1.5006,1.4975V19.615l-4.3733-5.0793
+				c-0.5445-0.6343-1.4928-0.6992-2.1177-0.1439c-0.6235,0.5538-0.6869,1.5176-0.1392,2.1519l8.1309,9.4457l8.1309-9.4457
+				C40.1774,15.9094,40.1124,14.9456,39.4905,14.3918z"/>
+		</g>
+	</g>
+</svg>

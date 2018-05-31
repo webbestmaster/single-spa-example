@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	<!ENTITY ns_extend "http://ns.adobe.com/Extensibility/1.0/">
+	<!ENTITY ns_ai "http://ns.adobe.com/AdobeIllustrator/10.0/">
+	<!ENTITY ns_graphs "http://ns.adobe.com/Graphs/1.0/">
+	<!ENTITY ns_vars "http://ns.adobe.com/Variables/1.0/">
+	<!ENTITY ns_imrep "http://ns.adobe.com/ImageReplacement/1.0/">
+	<!ENTITY ns_sfw "http://ns.adobe.com/SaveForWeb/1.0/">
+	<!ENTITY ns_custom "http://ns.adobe.com/GenericCustomNamespace/1.0/">
+	<!ENTITY ns_adobe_xpath "http://ns.adobe.com/XPath/1.0/">
+]>
+<svg version="1.1" id="Layer_1" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="49px" height="49px"
+	 viewBox="0 0 49 49" enable-background="new 0 0 49 49" xml:space="preserve">
+	<g i:extraneous="self">
+		<path d="M28.9906,18.0432c4.4031,0,7.986-3.5829,7.986-7.9875c0-4.403-3.5829-7.9859-7.986-7.9859
+			c-4.4046,0-7.9875,3.5829-7.9875,7.9859C21.0032,14.4603,24.586,18.0432,28.9906,18.0432 M28.9906,20.0384
+			c-5.5146,0-9.9828-4.468-9.9828-9.9828c0-5.5131,4.4681-9.9828,9.9828-9.9828c5.5131,0,9.9828,4.4696,9.9828,9.9828
+			C38.9734,15.5704,34.5038,20.0384,28.9906,20.0384L28.9906,20.0384L28.9906,20.0384z"/>
+		<path d="M10.0221,18.0432c4.4045,0,7.9874-3.5829,7.9874-7.9875c0-4.403-3.5829-7.9859-7.9874-7.9859
+			c-4.4031,0-7.986,3.5829-7.986,7.9859C2.0361,14.4603,5.6189,18.0432,10.0221,18.0432 M10.0221,20.0384
+			c-5.5132,0-9.9829-4.468-9.9829-9.9828c0-5.5131,4.4696-9.9828,9.9829-9.9828c5.5146,0,9.9826,4.4696,9.9826,9.9828
+			C20.0047,15.5704,15.5367,20.0384,10.0221,20.0384L10.0221,20.0384L10.0221,20.0384z"/>
+		<path d="M48.9657,20.9803l-10.3633,3.8386c-0.9097-2.8023-3.5114-4.8422-6.617-4.8422H7.0277
+			c-3.8592,0-6.9878,3.1286-6.9878,6.988v6.9878c0,3.8592,3.1286,6.988,6.9878,6.988h5.9904v2.9951v0.9989v3.9927h2.9936v-3.9927
+			h6.988v3.9927h2.9953v-3.9927v-0.9989v-2.9951h5.9904c2.769,0,5.1401-1.6242,6.2711-3.9596l10.7092,3.9673V20.9803z"/>
+	</g>
+</svg>
