@@ -1,7 +1,7 @@
 // @flow
 
 import {start as singleSpaStart, registerApplication} from 'single-spa';
-import {type ModuleType} from './../types/single-spa';
+import {type ModuleType} from './../flow-types/single-spa';
 import {pathPrefix} from './helper';
 
 registerApplication(
@@ -12,4 +12,4 @@ registerApplication(
 
 singleSpaStart();
 
-console.log('++');
+console.log('SingleSpa has been started...');
