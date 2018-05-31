@@ -1,0 +1,92 @@
+/* stylelint-disable selector-pseudo-class-no-unknown, max-nesting-depth */
+
+:global {
+    .app-wrapper {
+        .hidden {
+            display: none !important;
+        }
+
+        .disabled {
+            opacity: 0.5;
+            pointer-events: none; // see Can I Use
+        }
+
+        .clear-self {
+            &:after {
+                clear: both;
+                content: '';
+                display: block;
+            }
+        }
+
+        .clear-full {
+            clear: both;
+
+            &:after {
+                clear: both;
+                content: '';
+                display: block;
+            }
+        }
+
+        .ellipsis {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .ta-c {
+            text-align: center;
+        }
+
+        .ta-l {
+            text-align: left;
+        }
+
+        .ta-r {
+            text-align: right;
+        }
+
+        .fl-l {
+            float: left;
+        }
+
+        .fl-r {
+            float: right;
+        }
+
+        .fl-n {
+            float: none;
+        }
+
+        .w50-c {
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+
+        .w75-c {
+            margin-left: auto;
+            margin-right: auto;
+            width: 75%;
+        }
+
+        .grow-0 {
+            display: block;
+            flex-grow: 0;
+            overflow: auto;
+        }
+
+        .grow-1 {
+            display: block;
+            flex-grow: 1;
+            overflow: auto;
+        }
+    }
+
+    /*
+    .json {
+        word-break: break-all;
+    }
+    */
+}
